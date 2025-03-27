@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Календарь</title>
+    <script src="https://vk.com/js/api/vk_bridge.js"></script>
+</head>
+<body>
+    <div style="width: 100%; height: 100%;">
+        <iframe 
+            src="https://calendar.yandex.ru/embed/week?layer_ids=32510184&layer_names=%D0%9A%D0%90%D0%9B%D0%95%D0%9D%D0%94%D0%90%D0%A0%D0%AC&tz_id=Europe%2FMoscow" 
+            width="100%" 
+            height="600px" 
+            frameborder="0">
+        </iframe>
+    </div>
+    <script>
+        VK.init(() => {
+            console.log("Готово!");
+        });
+    </script>
+</body>
+</html>
