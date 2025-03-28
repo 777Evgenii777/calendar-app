@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Календарь</title>
-    <script src="https://vk.com/js/api/vk_bridge.js"></script>
+    <!-- Подключаем современную библиотеку VK Bridge -->
+    <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
 </head>
 <body>
     <div style="width: 100%; height: 100%;">
@@ -16,9 +17,17 @@
         </iframe>
     </div>
     <script>
-        VK.init(() => {
-            console.log("Готово!");
-        });
+        // Инициализация VK Bridge
+        const vkBridge = window.vkBridge;
+
+        // Отправляем событие VKWebAppInit
+        vkBridge.send('VKWebAppInit')
+            .then((data) => {
+                console.log('VK Bridge инициализирован:', data);
+            })
+            .catch((error) => {
+                console.error('Ошибка инициализации VK Bridge:', error);
+            });
     </script>
 </body>
 </html>
